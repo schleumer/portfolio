@@ -1,126 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-        <meta charset="utf-8">
-        <title>portfolio.js</title>
-        <style>
-                body{
-                        font-family: monospace, sans-serif;
-                        background-color: #272822;
-                        color: white;
-                        font-size:14px;
-                } /*porque sim*/
-                pre{
-                        font-size:14px;
-                }
-                h1,h2,h3,h4,h5,h6{
-                margin:0;
-                padding:0;
-                }
-                pre h1, pre h3{
-                        display: inline-block;
-                        font-size: 14px;
-                        padding: 0;
-                        margin: 0
-                }
-                .varname, .str{
-                        color: #E6DB74;
-                        white-space: pre;
-                }
-                .comment{
-                        color: #75715E
-                }
-                .comment h1, .comment h3{
-                        color: #7E8E91
-                }
-                .keyword{
-                        color: #66D9EF
-                }
-                .op{
-                        color: #FF00E0;
-                }
-                .st{
-                        color:white;
-                }
-                h2.st{
-                        display:inline-block;
-                        font-size:14px;
-                }
-                a{
-                        color:white;
-                }
-                *{
-                        -moz-tab-size:    4;
-                        -o-tab-size:      4;
-                        -webkit-tab-size: 4;
-                        -ms-tab-size:     4;
-                        tab-size:         4;
-                }
-        </style>
-  </head>
-  <body>
-<pre class="comment">
-/**
- * @author <h1>Wesley Schleumer</h1>
- * <h3>Desenvolvimento Web e qualquer coisa que você pagar pra fazer</h3>
- */
-</pre>
-<div><span class="keyword">var</span> <h2 class="st">projetos</h2> <span class="op">=</span> <span class="st">{</span></div>
-                <ul style="list-style:none">
-                        <li><b class="varname">"Guia do Lugar"</b>: "<a class="str" href="http://guiadolugar.com.br">http://guiadolugar.com.br</a>",</li>
-                        <li><b class="varname">"Top Friends"</b>: "<a class="str" href="http://topfriends.biz">http://topfriends.biz</a>",</li>
-                        <li><b class="varname">"RRL Engenharia"</b>: "<a class="str" href="http://rrlengenharia.com.br">http://rrlengenharia.com.br</a>",</li>
-                        <li><b class="varname">"QTV Santos"</b>: "<a class="str" href="http://qtvsantos.com.br">http://qtvsantos.com.br</a>",</li>
-                        <li><b class="varname">"ComprasTV"</b>: "<a class="str" href="http://comprastv.com.br">http://comprastv.com.br</a>"</li>
-                </ul>
-                <div>};</div>
+<html lang="en" ng-app>
+<head>
+<meta charset="utf-8">
+<title>portfolio.js</title>
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script type="text/javascript">
+    function PortfolioController($scope) {
+        $scope.type = "code";
 
-                <div><span class="keyword">var</span> <h2 class="st">conhecimentos</h2> <span class="op">=</span> <span class="st">[</span></div>
-                <ul style="list-style:none">
-                        <li><span class="str">"[principal               ]       PHP"</span>,</li>
-                        <li><span class="str">"[avançado                ]       Javascript"</span>,</li>
-                        <li><span class="str">"[avançado                ]       CommonJS"</span>,</li>
-                        <li><span class="str">"[intermediario   ]       NodeJS"</span>,</li>
-                        <li><span class="str">"[intermediario   ]       MongoDB"</span>,</li>
-                        <li><span class="str">"[principal               ]       MySQL"</span>,</li>
-                        <li><span class="str">"[intermediario   ]       Ruby"</span>,</li>
-                        <li><span class="str">"[intermediario   ]       Python"</span>,</li>
-                        <li><span class="str">"[intermediario   ]       C#/Mono"</span>,</li>
-                        <li><span class="str">"[intermediario   ]       VB.NET(Por que eu fui aprender isso?)"</span>,</li>
-                        <li><span class="str">"[sinto atração   ]       Java"</span>,</li>
-                        <li><span class="str">"[sinto atração   ]       C/C++"</span>,</li>
-                        <li><span class="str">"[sei nada                ]       Português"</span></li>
-                </ul>
-                <div>];</div>
+        $scope.info = {
+            "author": "Wesley Schleumer",
+            "desc": "Desenvolvimento Web e qualquer coisa que você pagar pra fazer"
+        }
 
-                <div><span class="keyword">var</span> <h2 class="st">frameworks</h2> <span class="op">=</span> <span class="st">[</span></div>
-                <ul style="list-style:none">
-                        <li><span class="str">"jQuery(quem não sabe?)"</span>,</li>
-                        <li><span class="str">"AngularJS"</span>,</li>
-                        <li><span class="str">"KnockoutJS"</span>,</li>
-                        <li><span class="str">"CakePHP"</span>,</li>
-                        <li><span class="str">"Laravel"</span>,</li>
-                        <li><span class="str">"Express"</span>,</li>
-                        <li><span class="str">"Sinatra"</span>,</li>
-                        <li><span class="str">"Flask"</span>,</li>
-                        <li><span class="str">"Ze<span class="comment">&lt;lixo&gt;</span>nd Framework"</span></li>
-                </ul>
-                <div>];</div>
+        $scope.projetos = {
+            "Guia do Lugar": "http://guiadolugar.com.br",
+            "Top Friends": "http://topfriends.biz",
+            "RRL Engenharia": "http://rrlengenharia.com.br",
+            "QTV Santos": "http://qtvsantos.com.br",
+            "ComprasTV": "http://comprastv.com.br"
+        };
 
-                <div><span class="keyword">var</span> <h2 class="st">ferramentas</h2> <span class="op">=</span> <span class="st">[</span></div>
-                <ul style="list-style:none">
-                        <li><span class="str">"Linux &lt;3"</span>,</li>
-                        <li><span class="str">"Vim &lt;3"</span>,</li>
-                        <li><span class="str">"Intellij IDEA, Webstorm e PHPStorm &lt;3"</span>,</li>
-                        <li><span class="str">"Netbeans &lt;3"</span></li>
-                </ul>
-                <div>];</div>
-        <div><span class="keyword">var</span> <h2 class="st">onde_me_encontrar</h2> <span class="op">=</span> <span class="st">{</span></div>
-                <ul style="list-style:none">
-                        <li><b class="varname">"Facebook"</b>: "<a class="str" href="http://fb.com/wesley.schleumer">http://fb.com/wesley.schleumer</a>",</li>
-                        <li><b class="varname">"E-mail"</b>: "<a class="str" href="mailto:wesley.schleumer@gmail.com">wesley.schleumer@gmail.com</a>",</li>
-                        <li><b class="varname">"Github"</b>: "<a class="str" href="http://github.com/schleumer">http://github.com/schleumer</a>"</li>
-                </ul>
-                <div>};</div>
-        </body>
+        $scope.conhecimentos = [
+            "[principal		]	PHP",
+            "[avançado		]	Javascript",
+            "[avançado		]	CommonJS",
+            "[intermediario	]	NodeJS",
+            "[intermediario	]	MongoDB",
+            "[principal		]	MySQL",
+            "[intermediario	]	Ruby",
+            "[intermediario	]	Python",
+            "[intermediario	]	C#/Mono",
+            "[intermediario	]	VB.NET(Por que eu fui aprender isso?)",
+            "[sinto atração	]	Java",
+            "[sinto atração	]	C/C++",
+            "[sei nada		]	Português"
+        ];
+
+        $scope.frameworks = [
+            "jQuery(quem não sabe?)",
+            "AngularJS",
+            "KnockoutJS",
+            "CakePHP",
+            "Laravel",
+            "Express",
+            "Sinatra",
+            "Flask",
+            "Ze<lixo>nd Framework"
+        ]
+
+        $scope.ferramentas = [
+            "Linux <3",
+            "Vim <3",
+            "Intellij IDEA, Webstorm e PHPStorm <3",
+            "Netbeans <3"
+        ];
+
+        $scope.onde_me_encontrar = {
+            "Facebook": "http://fb.com/wesley.schleumer",
+            "E-mail": "wesley.schleumer@gmail.com",
+            "Github": "http://github.com/schleumer"
+        };
+
+        $scope.init = function () {
+
+        }
+
+        $scope.addWebsiteClass = function () {
+            if ($scope.type == "code") {
+                return "code";
+            } else {
+                return "human";
+            }
+        }
+
+        $scope.addNavClass = function () {
+            if ($scope.type == "human") {
+                return "nav"
+            }
+        }
+        $scope.maybeBeautiful = function(str) {
+            if($scope.type == "human"){
+                return str.replace('[', '<span class="label label-info">').replace(']','</span>&nbsp;');
+            }else{
+                return str;
+            }
+        }
+    }
+</script>
+<style>
+
+    body {
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        -ms-transition: all 0.3s ease-in;
+        -o-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+    }
+
+    #website.human {
+        margin: 0 auto;
+        width: 500px;
+    }
+
+    body.code {
+        color: white;
+        background-color: #272822;
+    }
+
+    #website.code * {
+        font-family: monospace, sans-serif;
+        font-size: 14px;
+    }
+
+        /*porque sim*/
+    pre {
+        font-size: 14px;
+    }
+
+    body.code h1,
+    body.code h2,
+    body.code h3,
+    body.code h4,
+    body.code h5,
+    body.code h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    body.code pre h1,
+    body.code pre h3 {
+        display: inline-block;
+        font-size: 14px;
+        padding: 0;
+        margin: 0
+    }
+
+    #website.code .varname::after,
+    #website.code .str::after {
+        content: "\"";
+    }
+
+    #website.code .varname::before,
+    #website.code .str::before {
+        content: "\"";
+    }
+
+    body.code .varname,
+    body.code .str {
+        color: #E6DB74;
+        white-space: pre;
+    }
+
+    body.code .comment {
+        color: #75715E
+    }
+
+    body.code .comment h1,
+    body.code .comment h3 {
+        color: #7E8E91
+    }
+
+    body.code .keyword {
+        color: #66D9EF
+    }
+
+    body.code .op {
+        color: #FF00E0;
+    }
+
+    body.code .st {
+        color: white;
+    }
+
+    body.code h2.st {
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    body.code a {
+        color: white;
+    }
+
+    body.code * {
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        -webkit-tab-size: 4;
+        -ms-tab-size: 4;
+        tab-size: 4;
+    }
+
+    body.code pre.uncommon {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #website.human .code {
+        display: none;
+    }
+
+    #website.code .human {
+        display: none;
+    }
+
+    body.human .st.h {
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    body.human .st.h::after {
+        content: ':';
+    }
+</style>
+</head>
+<body ng-controller="PortfolioController" ng-init="init()" ng-class="addWebsiteClass()">
+<div>
+    <button class="btn btn-primary btn-lg" style="position: fixed;top: 10px; right: 10px" ng-show="type == 'code'"
+            ng-click="type='human'">Não entendi nada!
+    </button>
+    <button class="btn btn-primary btn-lg" style="position: fixed;top: 10px; right: 10px" ng-show="type == 'human'"
+            ng-click="type='code'">Ok, pode voltar!
+    </button>
+    <div id="website" ng-class="addWebsiteClass()">
+<pre class="comment uncommon code">/**
+ * @author <h1>{{info.author}}</h1>
+ * <h3>{{info.desc}}</h3>
+ * <b>ps: não copie o código</b>
+ */</pre>
+        <div class="human">
+            <h1>{{info.author}}</h1>
+            <h4>{{info.desc}}</h4>
+        </div>
+        <div>
+            <span class="keyword code">var</span>
+            <h2 class="st h">projetos</h2>
+            <span class="op code">=</span>
+            <span class="st brackets code">{</span>
+        </div>
+        <ul style="list-style:none" ng-class="addNavClass()">
+            <li ng-repeat="(nome,url) in projetos">
+                <b class="varname code">{{nome}}</b>
+                <span class="code">:</span>
+                <a class="str" ng-href="{{url}}"><span class="code">{{url}}</span><span class="human">{{nome}}</span></a>
+                <span class="code" ng-hide="$last">,</span>
+            </li>
+        </ul>
+        <div class="brackets code">};</div>
+
+        <div>
+            <span class="keyword code">var</span>
+
+            <h2 class="st h">conhecimentos</h2>
+            <span class="op code">=</span>
+            <span class="st code">[</span>
+        </div>
+        <ul style="list-style:none" ng-class="addNavClass()">
+            <li ng-repeat="conhecimento in conhecimentos"><span class="str"><span ng-bind-html-unsafe="maybeBeautiful(conhecimento)"></span></span><span class="code" ng-hide="$last">,</span></li>
+        </ul>
+        <div class="code">];</div>
+
+        <div>
+            <span class="keyword code">var</span>
+
+            <h2 class="st h">frameworks</h2>
+            <span class="op code">=</span>
+            <span class="st code">[</span>
+        </div>
+
+        <ul style="list-style:none" ng-class="addNavClass()">
+            <li ng-repeat="framework in frameworks">
+                <span class="str">{{framework}}</span><span class="code" ng-hide="$last">,</span>
+            </li>
+        </ul>
+
+        <div class="code">];</div>
+
+        <div>
+            <span class="keyword code">var</span>
+            <h2 class="st h">ferramentas</h2>
+            <span class="op code">=</span> <span class="st code">[</span></div>
+        <ul style="list-style:none" ng-class="addNavClass()">
+            <li ng-repeat="ferramenta in ferramentas">
+                <span class="str"><span ng-bind-html-unsafe="ferramenta"></span></span><span class="code" ng-hide="$last">,</span>
+            </li>
+        </ul>
+        <div class="code">];</div>
+        <div>
+            <span class="keyword code">var</span>
+            <h2 class="st h">onde<span class="human"> </span>Me<span class="human"> </span>Encontrar</h2>
+            <span class="op code">=</span>
+            <span class="st code">{</span>
+        </div>
+        <ul style="list-style:none" ng-class="addNavClass()">
+            <li ng-repeat="(lugar, url) in onde_me_encontrar">
+                <b class="varname">{{lugar}}</b>
+                <span class="code">:</span>
+                <a class="str" href="{{url}}">{{url}}</a><span class="code" ng-hide="$last">,</span>
+            </li>
+        </ul>
+        <div class="code">};</div>
+    </div>
+</div>
+</body>
 </html>
